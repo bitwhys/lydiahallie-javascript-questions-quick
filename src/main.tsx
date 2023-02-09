@@ -1,10 +1,23 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import App from './App'
-import './index.css'
+import { globalCss } from './theme'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const globalStyles = globalCss({
+  'html,body,#root': {
+    height: '$screen',
+    backgroundColor: '$mauve1',
+    fontFamily: '$ui',
+    color: '$mauve12',
+  },
+})
+import './theme/tailwind.preflight.css'
+import '@fontsource/lexend/variable.css'
+import '@fontsource/fira-code/variable.css'
+
+createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    {globalStyles()}
     <App />
   </React.StrictMode>
 )
