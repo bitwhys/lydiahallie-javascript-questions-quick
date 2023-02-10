@@ -5,7 +5,7 @@ import { globalCss } from './theme'
 
 const globalStyles = globalCss({
   'html,body,#root': {
-    height: '$screen',
+    height: '$full',
     backgroundColor: '$mauve1',
     fontFamily: '$ui',
     color: '$mauve12',

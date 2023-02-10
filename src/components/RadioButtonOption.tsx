@@ -94,7 +94,7 @@ const StyledRadioButtonBase = styled(baseRadioButton, {
     {
       disabled: true,
       selected: true,
-      valid: true,
+      valid: false,
       css: {
         backgroundColor: '$red3',
         borderColor: '$red7',
@@ -166,9 +166,9 @@ const OptionIcon = ({ option, disabled, valid }) => {
     return <Check size={24} weight="bold" />
   }
 }
-export const RadioButtonOption = ({ value, key, disabled, valid }) => {
+export const RadioButtonOption = ({ value, disabled, valid }) => {
   return (
-    <RadioGroup.Option value={value} key={key} as={Fragment}>
+    <RadioGroup.Option value={value} key={value.option} as={Fragment}>
       {({ checked }) => (
         <StyledRadioButtonBase selected={checked} disabled={disabled} valid={valid}>
           <span data-role="option">
