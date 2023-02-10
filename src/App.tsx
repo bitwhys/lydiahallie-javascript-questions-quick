@@ -13,7 +13,6 @@ import {
 } from './components'
 import QuestionPreview from './components/QuestionPreview'
 import { MultipleChoiceOption } from './components/RadioButtonOption'
-import { styled } from './theme'
 import { useTimer } from './hooks/useTimer'
 
 export interface Resource {
@@ -26,10 +25,11 @@ export interface Option {
   label: string
 }
 
-export type OptionsTuple = [Option, Option, Option, Option]
 export interface Question {
   question: string
-  options: OptionsTuple
+
+  codeSample: string
+  options: Array<Question>
   answer: string
   explanation: string
   resources?: Array<Resource>
